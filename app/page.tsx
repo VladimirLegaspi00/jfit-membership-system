@@ -32,18 +32,18 @@ export default function Home() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-zinc-950 text-white">
       {/* Navigation */}
-      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-5">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-5 sm:gap-6 sm:px-6">
         {/* Larger JFIT logo */}
         <a
           href="#home"
-          className="relative block h-32 w-80 shrink-0 sm:h-36 sm:w-96"
+         className="relative block h-20 w-48 shrink-0 sm:h-24 sm:w-56 lg:h-36 lg:w-96"
         >
           <Image
             src="/jfit-logo-transparent.png"
             alt="JFIT Fitness Master logo"
             fill
             priority
-            sizes="384px"
+            sizes="(max-width: 639px) 192px, (max-width: 1023px) 224px, 384px"
             className="object-contain object-left"
           />
         </a>
