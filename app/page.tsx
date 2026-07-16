@@ -36,14 +36,14 @@ export default function Home() {
         {/* Larger JFIT logo */}
         <a
           href="#home"
-          className="relative block h-20 w-44 shrink-0 sm:h-24 sm:w-56"
+          className="relative block h-32 w-80 shrink-0 sm:h-36 sm:w-96"
         >
           <Image
             src="/jfit-logo-transparent.png"
             alt="JFIT Fitness Master logo"
             fill
             priority
-            sizes="224px"
+            sizes="384px"
             className="object-contain object-left"
           />
         </a>
