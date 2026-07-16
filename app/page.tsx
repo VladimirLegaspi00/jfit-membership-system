@@ -32,46 +32,109 @@ export default function Home() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-zinc-950 text-white">
       {/* Navigation */}
-      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-5 sm:gap-6 sm:px-6">
-        {/* Larger JFIT logo */}
+      <nav className="relative z-50 mx-auto flex max-w-7xl items-center justify-between gap-2 px-4 py-5 sm:gap-5 sm:px-6">
+        {/* JFIT logo */}
         <a
           href="#home"
-         className="relative block h-20 w-48 shrink-0 sm:h-24 sm:w-56 lg:h-36 lg:w-96"
+          className="relative block h-16 w-36 shrink-0 sm:h-24 sm:w-56 lg:h-36 lg:w-96"
         >
           <Image
             src="/jfit-logo-transparent.png"
             alt="JFIT Fitness Master logo"
             fill
             priority
-            sizes="(max-width: 639px) 192px, (max-width: 1023px) 224px, 384px"
+            sizes="(max-width: 639px) 144px, (max-width: 1023px) 224px, 384px"
             className="object-contain object-left"
           />
         </a>
 
-        <div className="hidden items-center gap-8 text-base text-zinc-300 md:flex">
-          <a href="#about" className="transition hover:text-white">
-            About
+        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+          {/* Tablet and desktop navigation */}
+          <div className="hidden items-center gap-4 text-sm text-zinc-300 md:flex lg:gap-8 lg:text-base">
+            <a href="#about" className="transition hover:text-white">
+              About
+            </a>
+
+            <a href="#facilities" className="transition hover:text-white">
+              Facilities
+            </a>
+
+            <a href="#plans" className="transition hover:text-white">
+              Membership Plans
+            </a>
+
+            <a href="#location" className="transition hover:text-white">
+              Location
+            </a>
+          </div>
+
+          {/* Staff login */}
+          <a
+            href="/dashboard"
+            className="shrink-0 rounded-full border border-zinc-700 px-4 py-2.5 text-xs font-medium transition hover:border-white sm:px-5 sm:text-sm"
+          >
+            Staff Login
           </a>
 
-          <a href="#facilities" className="transition hover:text-white">
-            Facilities
-          </a>
+          {/* Mobile hamburger menu */}
+          <details className="group relative md:hidden">
+            <summary
+              aria-label="Open navigation menu"
+              className="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-full border border-zinc-700 text-white transition hover:border-white [&::-webkit-details-marker]:hidden"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                className="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+              >
+                <path d="M4 7h16" />
+                <path d="M4 12h16" />
+                <path d="M4 17h16" />
+              </svg>
+            </summary>
 
-          <a href="#plans" className="transition hover:text-white">
-            Membership Plans
-          </a>
+            <div className="absolute right-0 top-12 z-50 w-56 overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 p-2 shadow-2xl">
+              <a
+                href="#about"
+                className="block rounded-xl px-4 py-3 text-sm font-medium text-zinc-200 transition hover:bg-zinc-800 hover:text-white"
+              >
+                About
+              </a>
 
-          <a href="#location" className="transition hover:text-white">
-            Location
-          </a>
+              <a
+                href="#facilities"
+                className="block rounded-xl px-4 py-3 text-sm font-medium text-zinc-200 transition hover:bg-zinc-800 hover:text-white"
+              >
+                Facilities
+              </a>
+
+              <a
+                href="#plans"
+                className="block rounded-xl px-4 py-3 text-sm font-medium text-zinc-200 transition hover:bg-zinc-800 hover:text-white"
+              >
+                Membership Plans
+              </a>
+
+              <a
+                href="#location"
+                className="block rounded-xl px-4 py-3 text-sm font-medium text-zinc-200 transition hover:bg-zinc-800 hover:text-white"
+              >
+                Location
+              </a>
+
+              <a
+                href="#join"
+                className="mt-1 block rounded-xl bg-amber-300 px-4 py-3 text-sm font-semibold text-zinc-950 transition hover:bg-amber-200"
+              >
+                Join JFIT
+              </a>
+            </div>
+          </details>
         </div>
-
-        <button
-          type="button"
-          className="shrink-0 rounded-full border border-zinc-700 px-5 py-2.5 text-sm font-medium transition hover:border-white"
-        >
-          Staff Login
-        </button>
       </nav>
 
       {/* Hero */}
@@ -227,7 +290,6 @@ export default function Home() {
             workouts, cardio, and full-body exercise.
           </p>
 
-          {/* Cleaner access information */}
           <div className="mt-7 inline-flex items-center gap-3 rounded-full border border-amber-300/30 bg-amber-300/[0.06] px-5 py-3">
             <span className="flex h-7 w-7 items-center justify-center rounded-full bg-amber-300 text-sm font-bold text-zinc-950">
               ✓
@@ -415,31 +477,30 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Join */}
       {/* Inquiry */}
-<section
-  id="join"
-  className="border-t border-zinc-800 bg-zinc-900/40"
->
-  <div className="mx-auto max-w-3xl px-6 py-24">
-    <div className="mb-12 text-center">
-      <p className="text-sm font-semibold uppercase tracking-[0.25em] text-amber-300">
-        Start today
-      </p>
+      <section
+        id="join"
+        className="border-t border-zinc-800 bg-zinc-900/40"
+      >
+        <div className="mx-auto max-w-3xl px-6 py-24">
+          <div className="mb-12 text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-amber-300">
+              Start today
+            </p>
 
-      <h2 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">
-        Send us an inquiry.
-      </h2>
+            <h2 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">
+              Send us an inquiry.
+            </h2>
 
-      <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-zinc-400">
-        Interested in joining JFIT? Fill out the form and we’ll contact you
-        regarding membership plans and other gym inquiries.
-      </p>
-    </div>
+            <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-zinc-400">
+              Interested in joining JFIT? Fill out the form and we’ll contact
+              you regarding membership plans and other gym inquiries.
+            </p>
+          </div>
 
-    <InquiryForm />
-  </div>
-</section>
+          <InquiryForm />
+        </div>
+      </section>
 
       {/* Footer */}
       <footer className="border-t border-zinc-800">
