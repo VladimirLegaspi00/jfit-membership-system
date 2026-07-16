@@ -39,7 +39,7 @@ export default function Home() {
           className="relative block h-20 w-44 shrink-0 sm:h-24 sm:w-56"
         >
           <Image
-            src="/jfit-logo.png"
+            src="/jfit-logo-transparent.png"
             alt="JFIT Fitness Master logo"
             fill
             priority
